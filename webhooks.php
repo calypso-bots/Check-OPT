@@ -79,27 +79,27 @@ if (!is_null($events['events'])) {
 						$count_deploy=fgets($myfile);
 						if (date('Hi') >= 0600 and date('Hi') < 1800) {
 								if ($count_deploy >= 28) {
-								$text .= "All Service is OK.(" . $count_deploy . "/29)";
+								$text .= "All Services are OK.(" . $count_deploy . "/29)";
 							} else {
 								$text .= "Some Service is Down.(" . $count_deploy . "/29)";
 							}
 						}
 						elseif (date('Hi') >= 1800 and date('Hi') < 2130) {
 								if ($count_deploy >= 24) {
-								$text .= "All Service is OK,OOTB downtime.(" . $count_deploy . "/29)";
+								$text .= "All Services are OK,OOTB downtime.(" . $count_deploy . "/29)";
 							} else {
-								$text .= "Some Service is Down.(" . $count_deploy . "/29)";
+								$text .= "Some Service are Down.(" . $count_deploy . "/29)";
 							}
 						}
 						elseif (date('Hi') >= 2130 and date('Hi') < 0500) {
 								if ($count_deploy >= 27) {
 								$text .= "All Service is OK, Swift or Custody downtime.(" . $count_deploy . "/29)";
 							} else {
-								$text .= "Some Service is Down.(" . $count_deploy . "/29)";
+								$text .= "Some Service is are Down.(" . $count_deploy . "/29)";
 							}
 						}
 						else {
-							$text .= "Urgent : Some Service is Down.(" . $count_deploy . "/29),Please contact CAA";
+							$text .= "Urgent : Some Services are Down.(" . $count_deploy . "/29),Please contact CAA";
 						}
 						fclose($myfile);
 						fclose($myfile1);
