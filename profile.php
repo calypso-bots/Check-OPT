@@ -11,6 +11,6 @@ $f_source='http://api.openweathermap.org/data/2.5/weather?q=Bangkok';
      $temp=$f_get_list->main->temp;
      $windspeed=$f_get_list->wind->speed;
 	 
-	 echo $cityname
-	 echo $weatherstatus
+	 echo $cityname;
+	 echo $Temp ;
 ?>
