@@ -1,33 +1,14 @@
-<?php    header ('Content-type: text/html; charset=utf-8');
-
-     
-      
-      
- 
-   
-  
-        $ch = curl_init(); 
-
-        // set url สำหรับดึงข้อมูล 
-        curl_setopt($ch, CURLOPT_URL, "http://data.tmd.go.th/api/WeatherToday/V1/?type=json"); 
-
-        //return the transfer as a string 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-
-        // ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
-        $output = curl_exec($ch); 
-        
-     
-   
-
-        // ปิดการเชื่อต่อ
-        curl_close($ch);    
-        // output ออกไปครับ
-        echo $output;
-        
-       
-                 
-          
-
-
+<?php
+$f_source='http://api.openweathermap.org/data/2.5/weather?q=Bangkok,TH';
+	$json_f = file_get_contents($f_source);
+	$f_get_list = json_decode($json_f);
+     foreach ($f_get_list as $fgetlist ) {
+	$cityname=$fgetlist->name;
+      }
+     foreach ($f_get_list->weather as $weatherlist ) {
+	$weatherstatus=$weatherlist->main;
+      }
+     $temp=$f_get_list->main->temp;
+     $windspeed=$f_get_list->wind->speed;
+	echo "Temp : " + $temp
 ?>
